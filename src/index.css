@@ -7,8 +7,31 @@ body {
   justify-content: center;
   height: 100vh;
   color: blanchedalmond;
+  margin: auto;
 }
 
 h1 {
   font-size: 56px;
+  text-align: center;
+}
+
+.booklist-sections {
+  height: 360px;
+  width: 300px;
+  float:left;
+  margin-bottom: 1.5%;
+}
+
+.booklist-cover-photos {
+  height: 300px;
+  width: 250px;
+}
+
+#booklist {
+  margin-left: 5%;
+}
+#booklist-welcome {
+  margin-top: 2%;
+  text-align: center;
+  margin-bottom: 4%;
 }
