@@ -1,13 +1,14 @@
-import BookList from "./BookList.jsx";
 import { Routes, Route } from "react-router-dom";
+import BookList from "./BookList.jsx";
+import SingleBook from "./SingleBook.jsx"
 
 const App = () => {
 
   return (
     <>
-    <h1>Welcome to Book Buddy</h1>
     <Routes>
     <Route path="/" element={<BookList />} />
+    <Route path="/:id/:title/:image/:author/:description/:available" element={<SingleBook />} />
     </Routes>
     </>
   )
