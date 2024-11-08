@@ -20,6 +20,7 @@ body {
 .booklist-cover-photos {
   height: 300px;
   width: 250px;
+  border: 3px solid blanchedalmond;
 }
 
 #welcome-header {
