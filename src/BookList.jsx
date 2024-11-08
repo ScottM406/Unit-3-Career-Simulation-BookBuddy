@@ -13,7 +13,6 @@ const BookList = () => {
       const response = await fetch("https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books");
       const booksJSON = await response.json();
       const books = booksJSON.books
-      console.log(books) // TEST - DELETE
       setBookList(books);
   }
 
@@ -28,7 +27,7 @@ const BookList = () => {
   return (
     <div id="booklist">
       <h1 id="welcome-header">Welcome to Book Buddy</h1>
-      <h2 id="booklist-welcome">You can now browse our library from home! Click on a book to see full details.</h2>
+      <h2 id="booklist-welcome">You can now browse our library from home, and reserve books! Click on a book to see full details.</h2>
       {bookList.map((book) => (
       <section key={book.id} className="booklist-sections" onClick={() => clickHandler(book.id,book.title,book.coverimage,book.author,book.description,book.available)}>
         <img className="booklist-cover-photos" src={book.coverimage} alt={`${book.title}'s cover photo`}/>
