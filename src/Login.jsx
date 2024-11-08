@@ -4,6 +4,7 @@ const Login = () => {
 
   const [email,setEmial] = useState("");
   const [password,setPassword] = useState("");
+  const [loginToken, setLoginToken] = useState("");
 
   const submitHandler = async (event) => {
 
@@ -18,31 +19,35 @@ const Login = () => {
       }),
     });
 
-    console.log(credPost);
     const responseJSON = await credPost.json();
-    console.log(responseJSON);
+    const token = responseJSON.token
+    setLoginToken(token);
   }
 
   return (
     <>
-    <h1>Please Log In Below</h1>
-    <form onSubmit={submitHandler}>
+  
+    <form id="login-form" onSubmit={submitHandler}>
+    <h1 id="login-header">Please Log In Below</h1>
       <p>Email:</p>
       <input 
-      placeholder= "email"
-      type= "email"
-      value= {email}
-      onChange={(event) => {setEmial(event.target.value)}} />
+        placeholder= "email"
+        type= "email"
+        value= {email}
+        required
+        onChange={(event) => {setEmial(event.target.value)}} />
       <p>Password</p>
       <input 
-      placeholder="password"
-      type="password"
-      value= {password}
-      onChange={(event) => {setPassword(event.target.value)}}
+        placeholder="password"
+        type="password"
+        value= {password}
+        required
+        onChange={(event) => {setPassword(event.target.value)}}
        />
       <button type="submit">Log In</button>
+      <p id="not-a-member-tip">Not a member? Please register here.</p>
     </form>
-    <p>Not a member? Please register here.</p>
+
     </>
   )
 }
