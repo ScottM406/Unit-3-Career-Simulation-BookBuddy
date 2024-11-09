@@ -10,6 +10,32 @@ body {
   margin: auto;
 }
 
+header {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 24px;
+  background-color: rgb(253, 220, 169);
+  border-bottom: 10px outset rgb(245, 211, 161);
+  min-width: 70vh;
+
+}
+
+header > * {
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 5px solid rgb(243, 201, 137);
+  font-weight: 800;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: rgb(245, 211, 161);
+}
+
+a:visited {
+  color: blue;
+}
 .booklist-sections {
   height: 360px;
   width: 300px;
@@ -32,10 +58,11 @@ body {
 #booklist {
   margin-left: 5%;
 }
+
 #booklist-welcome {
-  margin-top: 2%;
+  margin: 2% auto 4% auto;
   text-align: center;
-  margin-bottom: 4%;
+  width: 70%;
 }
 
 #title {
@@ -55,6 +82,7 @@ body {
   width: 500px;
   float: left;
   margin-left: 15%;
+  border: 3px solid blanchedalmond;
 }
 
 #single-book-description {
@@ -114,6 +142,12 @@ body {
   cursor: pointer;
 }
 
+#register-form > #already-a-member-tip {
+  margin-top: 8%;
+  font-size: 18px;
+  align-self: center;
+}
+
 #login-header {
   font-size: 50px;
 }
@@ -122,8 +156,7 @@ body {
   margin-top: 10%;
   display: flex;
   flex-direction: column;
-  flex:content
-  width:90%;
+  flex:content;
 }
 
 #login-form > input {
