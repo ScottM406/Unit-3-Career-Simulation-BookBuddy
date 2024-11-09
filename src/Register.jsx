@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 const Register = () => {
 
@@ -70,6 +71,7 @@ const Register = () => {
         required
       />
       <button type="submit">Register</button>
+      <p id="already-a-member-tip">Already a member? Please log in <Link to={"/Login"}>here</Link></p>
     </form>
     </>
   )

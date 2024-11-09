@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -45,7 +46,7 @@ const Login = () => {
         onChange={(event) => {setPassword(event.target.value)}}
        />
       <button type="submit">Log In</button>
-      <p id="not-a-member-tip">Not a member? Please register here.</p>
+      <p id="not-a-member-tip">Not a member? Please register <Link to={"/Register"}>here</Link>.</p>
     </form>
 
     </>
