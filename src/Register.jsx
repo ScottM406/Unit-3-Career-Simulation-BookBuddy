@@ -7,7 +7,7 @@ const Register = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [usertoken, setUserToken] = useState("");
+  const [userToken, setUserToken] = useState("");
 
   const submitHandler = async (event) => {
 
@@ -26,12 +26,14 @@ const Register = () => {
 
     const responseJSON = await postNewUser.json();
     const token = responseJSON.token;
-    console.log(token);
     setUserToken(token)
   }
 
   return (
     <>
+    { userToken ?
+    <h1 id="register-ty">Thank you for resigstering! Please <Link to={"/Login"}>log in</Link> to continue.</h1>
+    :
     <form id="register-form" onSubmit={submitHandler}>
     <h1 id="register-header">Please Register Below</h1>
       <p>First Name:</p>
@@ -72,7 +74,7 @@ const Register = () => {
       />
       <button type="submit">Register</button>
       <p id="already-a-member-tip">Already a member? Please log in <Link to={"/Login"}>here</Link></p>
-    </form>
+    </form> }
     </>
   )
 }

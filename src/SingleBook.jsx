@@ -14,6 +14,7 @@ const SingleBook = () => {
       {available === "true" ? <h4 id="available">AVAILABLE!</h4> : <h4 id="unavailable">CHECKED OUT</h4>  }
       <img id="single-book-photo"src={image} alt={`${title}'s cover photo`}/>
       <p id="single-book-description">{description}</p>
+      <button>Back to Book List</button>
     </div>
   )
 }
