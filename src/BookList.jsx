@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const BookList = () => {
+const BookList = ( { loginToken }) => {
 
   const [bookList, setBookList] = useState([]);
   const navigate = useNavigate();
@@ -27,11 +27,15 @@ const BookList = () => {
   return (
     <div id="booklist">
       <h1 id="welcome-header">Welcome to Book Buddy</h1>
-      <h2 id="booklist-welcome">
+      {loginToken ?
+      <h2 className="booklist-welcome">Welcome back, valued book buddy! You can now browse our library from home, and reserve books! Click on a book to see full details.</h2>
+      :
+      <h2 className="booklist-welcome">
         You can now browse our library from home, and reserve books! Click on a book to see full details. 
         To reserve books and view your reserved books, you must be logged in. Click {<Link to="/login">here</Link>} to log in, or 
         click <Link to="/register">here</Link> to register!
       </h2>
+      }
       {bookList.map((book) => (
       <section key={book.id} className="booklist-sections" onClick={() => clickHandler(book.id,book.title,book.coverimage,book.author,book.description,book.available)}>
         <img className="booklist-cover-photos" src={book.coverimage} alt={`${book.title}'s cover photo`}/>

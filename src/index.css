@@ -16,15 +16,15 @@ header {
   padding-bottom: 30px;
   font-size: 24px;
   background-color: rgb(253, 220, 169);
-  border-bottom: 10px outset rgb(245, 211, 161);
-  min-width: 70vh;
+  border: 7px outset rgb(233, 185, 113);
+  min-width: 175vh;
 
 }
 
 header > * {
   margin-left: 10%;
   margin-right: 10%;
-  border: 5px solid rgb(243, 201, 137);
+  border: 5px outset rgb(243, 201, 137);
   font-weight: 800;
   padding-left: 10px;
   padding-right: 10px;
@@ -33,14 +33,29 @@ header > * {
   background-color: rgb(245, 211, 161);
 }
 
-a:visited {
-  color: blue;
+a {
+  text-decoration: none;
+  color: rgb(0, 174, 255);
 }
+a:visited {
+  color: rgb(0, 174, 255);
+}
+
+header > a {
+  color: black;
+}
+
+header > a:visited {
+  color: black;
+}
+
 .booklist-sections {
   height: 360px;
-  width: 300px;
+  width: 250px;
   float:left;
   margin-bottom: 1.5%;
+  cursor: pointer;
+  margin:1.25%;
 }
 
 .booklist-cover-photos {
@@ -59,7 +74,7 @@ a:visited {
   margin-left: 5%;
 }
 
-#booklist-welcome {
+.booklist-welcome {
   margin: 2% auto 4% auto;
   text-align: center;
   width: 70%;
@@ -121,13 +136,23 @@ a:visited {
   z-index: -1;
 }
 
+#single-book-background > button {
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  
+}
+
 #register-header {
   font-size: 70px;
 }
 #register-form {
-  margin-top: 10%;
+  margin-top: 3%;
   display: flex;
   flex-direction: column;
+  max-width: 60vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #register-form > input {
@@ -148,15 +173,23 @@ a:visited {
   align-self: center;
 }
 
+#register-ty {
+  margin-top: 17.5%;
+  text-align: center;
+}
+
 #login-header {
   font-size: 50px;
 }
 
 #login-form {
-  margin-top: 10%;
+  margin-top: 4%;
   display: flex;
   flex-direction: column;
   flex:content;
+  max-width: 50vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #login-form > input {
@@ -176,4 +209,9 @@ a:visited {
   margin-top: 12%;
   font-size: 18px;
   align-self: center;
+}
+
+#login-ty {
+  margin-top: 17.5%;
+  text-align: center;
 }
