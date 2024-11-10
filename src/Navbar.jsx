@@ -6,7 +6,7 @@ const Navbar = ( {loginToken} ) => {
       {loginToken ? <Link to={"/"}>Book List</Link> : <Link to={"/"}>Home</Link>}
       {loginToken ? null : <Link to={"/Login"}>Log In</Link>}
       {loginToken ? null : <Link to={"/Register"}>Register</Link>}
-      {loginToken ? <Link>Account</Link> : null}
+      {loginToken ? <Link to={"/Account"}>Account</Link> : null}
     </header>
   )
 }
