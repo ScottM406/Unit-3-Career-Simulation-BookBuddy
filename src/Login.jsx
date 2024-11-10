@@ -36,7 +36,7 @@ const Login = ( { setLoginToken } ) => {
   return (
 
     loginMessage ? 
-      <h1 id="login-ty">Thank you for Logging in! You will be redirected shortly</h1>
+      <h1 id="login-ty">Thank you for Logging in! You will be redirected shortly.</h1>
     :
       <>
         <form id="login-form" onSubmit={submitHandler}>
