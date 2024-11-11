@@ -179,6 +179,13 @@ header > a:visited {
   align-self: center;
 }
 
+#register-form > button {
+  width: 90px;
+  height: 30px;
+  margin-top: 10%;
+  align-self: center;
+}
+
 #register-ty {
   margin-top: 17.5%;
   text-align: center;

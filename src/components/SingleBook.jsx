@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SingleBook = ( {loginToken, setBooksReserved} ) => {
 
   const {id, title, image, author, description, available} = useParams();
   const [isAvailable, setIsAvailable] = useState(useParams().available)
+  const navigate=useNavigate();
 
   const clickHandler = () => {
     setBooksReserved([title])
@@ -23,7 +25,7 @@ const SingleBook = ( {loginToken, setBooksReserved} ) => {
         <img id="single-book-photo"src={image} alt={`${title}'s cover photo`}/>
         <section id="single-book-block-subsection">
           <p id="single-book-description">{description}</p>
-          <button>Back to Book List</button>
+          <button onClick={() => navigate("/")}>Back to Book List</button>
           {loginToken && available === "true" && isAvailable === "true" ? <button onClick={clickHandler}>Reserve Book</button> : null}
         </section>
       </section>

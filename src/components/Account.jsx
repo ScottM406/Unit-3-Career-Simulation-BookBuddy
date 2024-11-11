@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { useState } from "react"
+import { useState } from "react";
+import Logout from "./Logout.jsx";
 
-const Account = ( { loginToken, booksReserved } ) => {
+const Account = ( { loginToken, booksReserved, setLoginToken } ) => {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -31,6 +32,8 @@ const Account = ( { loginToken, booksReserved } ) => {
     <div id="account-info">
     <h1 id="account-full-name">{firstName} {lastName}</h1>
     <p>{email}</p>
+    <Logout setLoginToken={setLoginToken}/>
+    <br/>
     <hr/>
     <h2>Your Book Reservations:</h2>
     <ul>
