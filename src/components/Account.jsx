@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Logout from "./Logout.jsx";
 
-const Account = ( { loginToken, booksReserved, setLoginToken } ) => {
+const Account = ( { loginToken, setLoginToken } ) => {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [booksReserved, setBooksReserved] = useState([]);
 
   useEffect(() => {
 
@@ -19,6 +20,8 @@ const Account = ( { loginToken, booksReserved, setLoginToken } ) => {
       setFirstName(detailsJSON.firstname);
       setLastName(detailsJSON.lastname);
       setEmail(detailsJSON.email);
+      setBooksReserved(detailsJSON.books)
+      console.log(detailsJSON.books);
 
     }
 
@@ -36,9 +39,10 @@ const Account = ( { loginToken, booksReserved, setLoginToken } ) => {
     <br/>
     <hr/>
     <h2>Your Book Reservations:</h2>
-    <ul>
-      <li>{booksReserved}</li>
-    </ul>
+    {booksReserved.map((book) => (
+      <p>{book.title}</p>
+      
+))}
     </div>
   )
   }
