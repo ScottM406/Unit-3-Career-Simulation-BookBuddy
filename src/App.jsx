@@ -10,17 +10,16 @@ import Account from "./components/Account.jsx"
 const App = () => {
 
   const [loginToken, setLoginToken] = useState("");
-  const [booksReserved, setBooksReserved] = useState([]);
 
   return (
     <>
     <Navbar loginToken={loginToken} />
     <Routes>
     <Route path="/" element={<BookList loginToken={loginToken} />} />
-    <Route path="/:id/:title/:image/:author/:description/:available" element={<SingleBook loginToken={loginToken} setBooksReserved={setBooksReserved}/>} />
+    <Route path="/:id/:title/:image/:author/:description/:available" element={<SingleBook loginToken={loginToken} />} />
     <Route path="/Login" element={<Login setLoginToken={setLoginToken} />} />
     <Route path="/Register" element={<Register />} />
-    <Route path="/Account" element={<Account loginToken={loginToken} booksReserved={booksReserved} setLoginToken={setLoginToken} />} />
+    <Route path="/Account" element={<Account loginToken={loginToken} setLoginToken={setLoginToken} />} />
     </Routes>
     </>
   )
