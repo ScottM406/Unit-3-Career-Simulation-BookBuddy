@@ -12,6 +12,8 @@ const Login = ( { setLoginToken } ) => {
 
     event.preventDefault();
 
+    try {
+
     const credPost = await fetch("https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json",} ,
@@ -20,6 +22,10 @@ const Login = ( { setLoginToken } ) => {
         password: password
       }),
     });
+
+    if (!credPost.ok) {
+      throw new Error()
+    }
 
     const responseJSON = await credPost.json();
     const token = responseJSON.token
@@ -31,6 +37,11 @@ const Login = ( { setLoginToken } ) => {
         navigate('/');
       }, 2500);
     }
+
+  } catch (error) {
+    alert("Invalid Credentials");
+  }
+
   }
 
   return (
